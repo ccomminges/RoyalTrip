@@ -1,0 +1,143 @@
+*, ::before, ::after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFF2CC;
+    height: 900px;
+}
+
+.boxCreation
+{
+    position: relative;
+    top: 70px;
+    margin-bottom: 250px;
+
+}
+
+.boxCreation h1
+{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 70px;
+}
+
+.boxCreation p
+{
+ text-align: center;
+    font-size: 32px;
+    margin-bottom: 60px;
+}
+
+.boxCreation #notifCreation
+{
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 60px;
+}
+
+.boxCreation .inputPrenomCompte
+{
+
+}
+
+.boxCreation  label
+{
+    text-align: justify;
+    font-size: 22px;
+    margin-left: 15px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.boxCreation  input
+{
+    text-align: justify;
+    font-size: 20px;
+    margin-left: 15px;
+    display: block;
+    margin-bottom: 50px;
+    width: 450px;
+    border-radius: 5px;
+    padding-left: 15px;
+}
+
+.boxCreation  input:hover
+{
+    border: 2px solid #5eb5e0;
+}
+
+
+.boxCreation .ageCreationCompte
+{
+    width: 150px;
+}
+
+.boxCreation .civiliteCreationCompte
+{
+    width: 80px;
+    font-size: 20px;
+    margin-left: 15px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+}
+
+.boxCreation .dateCreationCompte
+{
+    width: 300px;
+    font-size: 20px;
+    margin-left: 15px;
+   padding-right: 15px;
+    border-radius: 3px;
+}
+
+
+.boxCreation .dateCreationCompte
+{
+    width: 300px;
+    font-size: 20px;
+    margin-left: 15px;
+    padding-right: 15px;
+    border-radius: 3px;
+}
+
+.boxCreation  .btn-inscription
+{
+    width: 400px;
+    font-size: 34px;
+    margin-left: 790px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+}
+
+
+.boxCreation h3
+{
+    margin-top: 75px;
+    font-weight: bolder;
+    font-size: 28px;
+    margin-bottom: 50px;
+}
+
+.divInfoRegister
+{
+    position: relative;
+    left: 100px;
+    bottom: 100px;
+}
+
+.divInfoRegister h3
+{
+    font-size: 28px;
+}
+
+.divInfoRegister p
+{
+    font-size: 24px;
+    text-align: justify;
+}

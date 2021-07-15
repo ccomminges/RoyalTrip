@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+ {% block stylesheetAccueil %}
+     <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+     <link rel="stylesheet" href="{{ asset('assets/css/stylePage/stylePageTunnelAchat.css') }}">
+
+
+ {% endblock %}
+
+
+{% block title %}Choisir le nombre de place réservé - RoyalTrip {% endblock %}
+
+{% block content %}
+
+    <div class="choixNbPers">
+
+    <h2>Je passe ma commande</h2>
+
+    <p>Choisissez vos préférences avant de passer votre commande sur RoyalTrip</p>
+
+    <hr>
+
+
+
+    <div class="row">
+
+        <div class="col-md-8">
+            {%  set formHtml %}
+            {{ form_start(formCommande, {action:path('commande_recap')}) }}
+
+                <div class="col-md-8">
+                    {{ form_row(formCommande.NbPersPlus12) }}
+                </div>
+
+                <div class="col-md-8">
+                    {{ form_row(formCommande.NbPersMoins12) }}
+                </div>
+
+                <div  class="col-md-8">
+                    {{ form_row(formCommande.submitCommande) }}
+                </div>
+
+
+                {{ form_end(formCommande) }}
+            {%  endset %}
+            {{ formHtml|replace({'[br]': '<br/>'})|raw }}
+            <br>
+            <br>
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="text-center">
+                <h3>Récapitulatif de la commande</h3>
+            </div>
+            <div class="order-summary">
+                {%  for key,voy in panier  %}
+
+                    <div class="row {% if key > 0 %}mt-2{%  endif %}">
+                        <div class="col-5">
+                            <img src="/uploads/voyage/{{ voy.voyageNom.photo }}" alt="{{ voy.voyageNom.nom }}" height="75px"/>
+                        </div>
+                        <div class="col-1 my-auto"></div>
+                        <div id="nomRecap" class="col-3 my-auto">
+                            {{ voy.voyageNom.nom }} <br/>
+                        </div>
+                        <div class="col-1 my-auto"></div>
+                        <div class="col-2 my-auto">
+                            x {{ voy.quantite }}
+                        </div>
+                    </div>
+                {%  endfor  %}
+            </div>
+
+
+        </div>
+
+
+    </div>
+    </div>
+
+
+{% endblock %}

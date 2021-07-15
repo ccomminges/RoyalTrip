@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier informations personnelles - RoyalTrip{% endblock %}
+
+{% block stylesheetAccueil %}
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleShowProfil.css') }}">
+
+
+{% endblock %}
+
+{% block content %}
+
+    <a class="lienRetour" href="{{ path('show_profil', {'id':client.id}) }}"> Retour les informations personnelles</a>
+
+    <h1>Modifier mes coordonnées : </h1>
+    <br>
+    <br>
+    <br>
+
+
+    {{ form_start(formModifProfil) }}
+
+
+    <div class="row">
+        <div class="col-md-2"></div>
+
+    <div class="col-md-3">
+
+    <h3>Informations personnelles</h3>
+
+    </div>
+
+
+        <div class="col-md-7">
+            {{ form_row(formModifProfil.civilite) }}
+        </div>
+        <br>
+        <div class="col-md-5"></div>
+
+        <div class="col-md-7">
+            {{ form_row(formModifProfil.nom) }}
+        </div>
+        <div class="col-md-5"></div>
+
+        <div class="col-md-7">
+            {{ form_row(formModifProfil.prenom) }}
+        </div>
+        <div class="col-md-5"></div>
+
+        <div class="col-md-7">
+            {{ form_row(formModifProfil.dateNaissance) }}
+        </div>
+    </div>
+        <br>
+        <br>
+    <div class="row">
+    <div class="col-md-2"></div>
+
+    <div class="col-md-3">
+        <h3>Adresse</h3>
+    </div>
+        <div class="col-md-7">
+            {{ form_row(formModifProfil.adresse) }}
+        </div>
+        <div class="col-md-5"></div>
+
+        <div class="col-md-7">
+            {{ form_row(formModifProfil.telephone) }}
+        </div>
+    </div>
+
+        <br>
+
+    <div class="row">
+    <div class="col-md-2"></div>
+
+    <div class="col-md-3">
+        <h3>Email/Identifiant et Mot de Passe</h3>
+    </div>
+        <div class="col-md-7">
+            {{ form_row(formModifProfil.email) }}
+        </div>
+        <div class="col-md-5"></div>
+
+        <div class="col-md-7">
+            {{ form_row(formModifProfil.password) }}
+        </div>
+
+    </div>
+
+
+    {{ form_end(formModifProfil) }}
+
+
+
+{% endblock %}

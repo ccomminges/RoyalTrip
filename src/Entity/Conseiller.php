@@ -24,7 +24,7 @@ class Conseiller implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
-    private $login;
+    private $email;
 
     /**
      * @ORM\Column(type="json")
@@ -69,7 +69,7 @@ class Conseiller implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function __toString()
     {
-        return $this->getId().'[br]'.$this->getLogin().' [br] '.$this->getPassword()
+        return $this->getId().'[br]'.$this->getEmail().' [br] '.$this->getPassword()
             .' [br] '.$this->getNom().' [br] '.$this->getPrenom().' [br] '.$this->getTelephone()
             .' [br] '.$this->getQuestionnaire();
     }
@@ -79,14 +79,14 @@ class Conseiller implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->id;
     }
 
-    public function getLogin(): ?string
+    public function getEmail(): ?string
     {
-        return $this->login;
+        return $this->email;
     }
 
-    public function setLogin(string $login): self
+    public function setEmail(string $email): self
     {
-        $this->login = $login;
+        $this->email = $email;
 
         return $this;
     }
@@ -98,7 +98,7 @@ class Conseiller implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getUserIdentifier(): string
     {
-        return (string) $this->login;
+        return (string) $this->email;
     }
 
     /**

@@ -1,0 +1,80 @@
+*, ::before, ::after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFF2CC;
+    height: 900px;
+}
+
+.box-compte-client h1
+{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 50px;
+    margin-top: 60px;
+}
+
+.box-compte-client .paraMenuCompte
+{
+    text-align: justify;
+    font-size: 20px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 150px;
+}
+
+.box-compte-client #checkout-button
+{
+    width: 400px;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    border: 0px;
+}
+
+
+.box-compte-client .col-md-4
+{
+    height: 400px;
+    padding: 50px 50px;
+    background-color: #ded4d2;
+    margin: 50px 0px;
+    width: 100px;
+    border-radius: 5px;
+    box-shadow: 10px 5px 5px #d5c2be;
+}
+
+.box-compte-client .col-md-4 h3
+{
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.box-compte-client .col-md-4 i
+{
+    font-size: 250px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    top : 20px;
+    left: 60px;
+    color: #81b0bf;
+}
+
+.box-compte-client #menuRdv
+{
+    position: relative;
+    left: 520px;
+    margin-bottom: 50px;
+}
+
+
+

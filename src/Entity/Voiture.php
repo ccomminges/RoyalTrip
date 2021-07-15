@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Voiture
 {
+    //Attributs
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -37,12 +38,13 @@ class Voiture
      */
     private $formule;
 
+    //toString
     public function __toString()
     {
         return $this->getId().'[br]'.$this->getLoueur().'[br]'.$this->getCategorie();
     }
 
-
+//Getters et setters
     public function getId(): ?int
     {
         return $this->id;
@@ -52,7 +54,6 @@ class Voiture
     {
         return $this->loueur;
     }
-
     public function setLoueur(string $loueur): self
     {
         $this->loueur = $loueur;
@@ -64,7 +65,6 @@ class Voiture
     {
         return $this->categorie;
     }
-
     public function setCategorie(string $categorie): self
     {
         $this->categorie = $categorie;
@@ -76,7 +76,6 @@ class Voiture
     {
         return $this->photo;
     }
-
     public function setPhoto(?string $photo): self
     {
         $this->photo = $photo;
@@ -88,7 +87,6 @@ class Voiture
     {
         return $this->formule;
     }
-
     public function setFormule(?Formule $formule): self
     {
         $this->formule = $formule;

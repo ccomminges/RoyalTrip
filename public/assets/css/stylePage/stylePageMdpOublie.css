@@ -1,0 +1,73 @@
+*, ::before, ::after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 500px;
+    background-color: #FFF2CC;
+}
+
+.box-mdpOublie
+{
+    margin-top: 45px;
+}
+
+.box-mdpOublie h1
+{
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.box-mdpOublie label
+{
+    margin-top: 40px;
+    padding-left: 500px;
+    font-size: 28px;
+}
+
+.box-mdpOublie input
+{
+    margin-top: 18px;
+    margin-left: 500px;
+    padding-left: 28px;
+    width: 400px;
+    border-radius: 5px;
+    font-size: 22px;
+    border: none;
+}
+
+.box-mdpOublie input:hover
+{
+    border: 2px solid #5eb5e0;
+}
+
+
+.box-mdpOublie button
+{
+    width: 400px;
+    font-size: 20px;
+    margin-left: 500px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    border: 0px;
+
+}
+
+.text-link-mdp
+{
+    font-size: 22px;
+    margin-left: 520px;
+    margin-bottom: 70px
+}
+
+.text-link-mdp a:hover
+{
+    text-decoration: none;
+    color: green;
+}

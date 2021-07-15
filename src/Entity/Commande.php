@@ -76,7 +76,8 @@ class Commande
 
     public function __toString()
     {
-        return $this->getId().' [br] ';
+        return $this->getId().' [br] '.$this->getDateRDV()." ".' [br] '.$this->getHeureRDV()." ".' [br] '.$this->getDateCreation().'
+        [br] '.$this->getReference();
     }
 
     public function getId(): ?int

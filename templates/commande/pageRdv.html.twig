@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block stylesheetAccueil %}
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/stylePageTunnelAchat.css') }}">
+
+
+{% endblock %}
+
+{% block title %} Prendre rendez-vous avec un conseiller - RoyalTrip {% endblock %}
+
+
+{% block content %}
+
+    <div class="priseRdv">
+
+    {{ form(formCommandeRdv) }}
+
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="notifDivRdv">
+    {{ notification }}
+    </div>
+
+
+{% endblock %}

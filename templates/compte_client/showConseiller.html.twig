@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Coordonnées de mon conseiller - RoyalTrip{% endblock %}
+
+{% block stylesheetAccueil %}
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleShowProfil.css') }}">
+
+
+{% endblock %}
+
+
+{% block content %}
+    <a class="lienRetour" href="{{ path('account', {'email':app.user.email}) }}"> Retour à mon compte client</a>
+
+
+    {% if notification %}
+
+        <div class="alert alert-info" id="notifCreation">{{ notification }}</div>
+
+    {% elseif notification is null %}
+
+
+    <div class="box-monConseiller">
+
+        <h1>Mon conseiller </h1>
+
+
+        <p>Voici les informations de votre conseiller : </p>
+
+<div class="row">
+        {% for cl in client %}>
+            <div class="col-md-4">
+        <p>Nom : <span>{{ cl.conseiller.nom }} </span></p>
+        <p>Prenom <span> {{ cl.conseiller.prenom }}</span> </p>
+            </div>
+
+            <div class="col-md-2"></div>
+
+            <div class="col-md-4">
+            <h3>Contact</h3>
+        <p>Telephone : <span>{{ cl.conseiller.telephone }} </span></p>
+         <p>Email : <span> {{ cl.conseiller.email }} </span> </p>
+            </div>
+
+        {% endfor %}
+</div>
+    </div>
+    {% endif %}
+
+
+{% endblock %}

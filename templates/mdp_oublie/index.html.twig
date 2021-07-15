@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mot de passe oublie - RoyalTrip{% endblock %}
+
+ {% block stylesheetAccueil %}
+     <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+     <link rel="stylesheet" href="{{ asset('assets/css/stylePage/stylePageMdpOublie.css') }}">
+
+
+ {% endblock %}
+
+{% block content %}
+
+    <div class="box-mdpOublie">
+
+        {%  for message in app.flashes('notice') %}
+            <div class="alert alert-info">{{ message }}</div>
+        {%  endfor %}
+
+        <form method="post">
+
+
+            {% if app.user %}
+                <div class="mb-3">
+                    Vous êtes connecté sur compte au noum de {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                </div>
+            {% endif %}
+
+            <h1>Réinitialiser votre mot de passe</h1>
+            <label for="inputEmail">Votre email</label>
+            <input type="email" name="email" id="inputEmail" placeholder="votre email" class="form-control" required autofocus>
+
+
+
+            <button class="btn btn-lg btn-info btn-block mt-3" type="submit">
+                Valider
+            </button>
+            <hr/>
+            <p class="text-link-mdp"> Ou souhaitez-vous : <a href="{{ path('app_login') }}">vous connecter au compte</a></p>
+        </form>
+
+    </div>
+{% endblock %}

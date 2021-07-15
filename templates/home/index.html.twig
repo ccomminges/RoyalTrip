@@ -1,0 +1,253 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+{% block accueil %}
+
+    <section id="accueil">
+        <h1>RoyalTrip</h1>
+
+        <h3>Trouvez vos vacances de rêves grâce à nos nombreuses prestations à bas coûts et
+        aux conseils d'experts passionnés</h3>
+
+        <div class="btnAccueil">
+            <a href="#nosProduits"><button class="btn btn-success" id="btnCircuits">Nos séjours</button></a>
+            <a href="#contactNous"><button class="btn btn-success" id="btnContact">Contactez-nous</button></a>
+
+        </div>
+
+        <br>
+
+    </section>
+
+{% endblock %}
+
+{%  block presentation %}
+
+    <section id="presentation">
+
+        <div class="aPropos">
+            <h2>A propos</h2>
+            <p>Créé en 2010 par un collectif amoureux de voyage, RoyalTrip est un site de prestation de voyage dont
+                l'objectif est de vous accompagner dans vos modalités de recherches de vacances. Nos équipes de passioné(e)s vous
+                guident et vous apportent leur bienveillance afin de dénicher le voyage de vos rêves.</p>
+        </div>
+
+        <div class="chiffresCle">
+            <h2>Quelques chiffres</h2>
+              <div class="boxChiffre">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <span data-toggle="counter-up">2010</span>
+                          <p>Création de la société RoyalTrip</p>
+                      </div>
+                      <div class="col-md-6">
+                          <span data-toggle="counter-up">15</span>
+                          <p>Nombre de conseillers travaillant chez RoyalTrip</p>
+                      </div>
+                      <br>
+                      <br>
+
+                      <div class="col-md-6">
+                          <span data-toggle="counter-up">330</span>
+                          <p>Nombre moyen de voyages proposés par RoyalTrip</p>
+                      </div>
+
+                      <div class="col-md-6">
+                          <span data-toggle="counter-up">5536</span>
+                          <p>Nombre de clients passés par RoyalTrip pour réserver ses vacances</p>
+                      </div>
+
+                  </div>
+              </div>
+        </div>
+
+
+        <div class="services">
+            <h2>Nos services</h2>
+            <div class="boxServices">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span>Une qualité d'offre</span>
+                        <p>Nous vous proposons des centaines de circuits et séjours.
+                        Les produits proposés sont mis à jour régulièrement après des études approfondies du marché.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <span>Une expertise</span>
+                        <p>Nos conseillers sont minusieusement recrutés pour apporter leurs expertises et
+                        leurs passions dans vos projets.</p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <span>Une facilité dans les démarches</span>
+                        <p>Notre protocole a été pensé afin de garantir efficacité et facilité dans les démarches
+                        (réservation, paiment, location de voiture) que vous pourrez être ammener à faire.</p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <span>Un suivie pendant vos vacances</span>
+                        <p>Afin de s'assurer que votre séjour se passe de la meilleur des
+                        façons,nous vous proposons la possibilité de nous contacter
+                        durant vos vacances afin d'être en mesure de résoudre n'importe quel type de problème.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="nousChoisir">
+            <h2>Pourquoi nous choisir ? </h2>
+            <div class="boxNousChoisir">
+                <div class="row">
+                    <div class="col-md-4">
+                        <span><i class="fas fa-user-tie"></i></span>
+                        <p>Des conseillers disponibles avant, pendant et après votre séjour !!!</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span><i class="fas fa-suitcase-rolling"></i></span>
+                        <p>Une base de donnée remplie d'offre de voyage pour vous  permettre de vivre une expérience unique</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <span><i class="far fa-clock"></i></span>
+                        <p>Un gain de temps dans vos démarches et dans vos recherches</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <span><i class="fas fa-credit-card"></i></span>
+                        <p>Payez en toute sérénité et à votre rythme </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <span><i class="fas fa-exclamation-triangle"></i></span>
+                        <p>Une très bonne gestion des imprevus </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="confiance">
+            <h2>Ils nous font confiances : </h2>
+            <div class="boxConfiance">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="{{ asset("assets/img/logoPartenaire/LogoAirFrance.jpg") }}">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="{{ asset("assets/img/logoPartenaire/logoBritishAirways.jpg") }}">
+                    </div>
+
+                    <div class="col-md-3">
+                        <img src="{{ asset("assets/img/logoPartenaire/logoAustralie.png") }}">
+                    </div>
+
+                    <div class="col-md-3">
+                        <img src="{{ asset("assets/img/logoPartenaire/logoBresil.jpg") }}">
+                    </div>
+
+                    <div class="col-md-3">
+                        <img src="{{ asset("assets/img/logoPartenaire/logoTahiti.png") }}">
+                    </div>
+
+                    <div class="col-md-3">
+                        <img src="{{ asset("assets/img/logoPartenaire/officeTourismeUsa.jpg") }}">
+                    </div>
+
+                    <div class="col-md-3">
+                        <img src="{{ asset("assets/img/logoPartenaire/logoAvis.jpg") }}">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="{{ asset("assets/img/logoPartenaire/logoHertz.png") }}">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+{% endblock %}
+
+{% block nosProduits %}
+
+    <section id="nosProduits">
+
+        <h2>Nos offres : </h2>
+
+
+                <p class = "sousPhraseProduits">Trouvez le séjour idéal poour vos vacances : </p>
+
+                {{ form(formVoyage) }}
+
+
+
+
+        <div class="row voyage-container">
+            {%  for voyage in voyPagine %}
+                <div class="col-md-4">
+                    {% include 'home/afficheVoyages.html.twig' %}
+                </div>
+            {% endfor %}
+
+            <br>
+            <br>
+            <div class="pagination">
+            {{ knp_pagination_render(voyPagine) }}
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+{% endblock %}
+
+ {% block contact %}
+
+<div id="contactNous">
+
+     <h2>Contactez-nous : </h2>
+     <p>Par le biais de ce formulaire, vous pouvez poser vos questions,
+         faire des remarques ou prendre contact avec un conseiller</p>
+
+<div class="formCont">
+     {{ form_start(formNousContact) }}
+
+     <div class="form-group">
+         <i class="fas fa-user"></i>
+         {{ form_row(formNousContact.nom) }}
+     </div>
+
+     <div class="form-group">
+         <i class="fas fa-envelope"></i>
+         {{ form_row(formNousContact.email) }}
+     </div>
+
+     <div class="form-group">
+         <i class="fas fa-mobile-alt"></i>
+         {{ form_row(formNousContact.telephone) }}
+     </div>
+
+     <div class="form-group">
+         <i class="fas fa-pencil-alt"></i>
+         {{ form_row(formNousContact.content) }}
+     </div>
+     {{ form_end(formNousContact) }}
+
+
+
+    {%  for message in app.flashes('notice') %}
+        <div class="alert alert-info" style="text-align: center; font-size: 19px; margin: 100px">{{ message }}</div>
+    {%  endfor %}
+
+</div>
+
+</div>
+ {% endblock %}
+

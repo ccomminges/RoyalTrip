@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ma commande - RoyalTrp{% endblock %}
+
+{% block stylesheetAccueil %}
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleShowProfil.css') }}">
+
+
+{% endblock %}
+
+{% block content %}
+<a class="lienRetour" href="{{ path('compte_client_commande') }}">Retour à la liste des commandes</a>
+
+<div class="showCommande">
+    <h1>Ma commande {{ commande.reference }}</h1>
+
+    <br/>
+    <br/>
+
+    <br/>
+
+
+
+    <strong> Commande passée le : </strong> <p>{{ commande.dateCreation|date('d/m/Y') }}</p> <br>
+
+    <strong> Référence de ma commande : </strong> <p> {{ commande.reference }}</p> <br>
+
+    <br>
+
+
+    <strong>Statut du dossier : </strong>
+    <p> {% if commande.etat == 0 %}
+        En attente
+    {% elseif commande.etat == 1 %}
+        En cours de traitement
+    {% elseif commande.etat == 2 %}
+        Accepté
+    {% elseif commande.etat == 3 %}
+        Refusé
+    {% endif %}</p>
+
+    <br>
+
+<strong>Date du rendez-vous avec le conseiller pour traiter la commande : </strong>
+    <p>
+{{ commande.dateRDV|date('d/m/Y') }}
+    </p>
+
+<br>
+
+<strong>Modalité du rendez-vous : </strong>
+<p>{% if commande.rdvPresentiel==true %}
+        Rendez-vous effectué en présentiel à l'agence
+    {% elseif commande.rdvPresentiel==false %}
+        Rendez-vous effectué en distanciel par visio
+    {% endif %}
+</p>
+
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <strong> Detail de votre commande : </strong> <br>
+    <br>
+
+    <table class="table mt-4 ml-1 mr-1">
+        <thead>
+        <tr>
+            <th scope="col">Voyage commandé</th>
+            <th scope="col">Nombre de place demandé</th>
+            <th scope="col">Prix du voyage pour </th>
+            <th scope="col">Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for detail in commande.listeDetailCommandes %}
+            <tr>
+                <td>{{ detail.voyageNom }}</td>
+                <td>x {{ detail.quantite }}</td>
+                <td>{{ (detail.prix)|number_format(2,',',',') }} €</td>
+                <td>{{ ((detail.prix*detail.NbPersPlus12)+(detail.prix-detail.ReductionMoins12)*detail.NbPersMoins12)|number_format(2,',',',') }} €</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+</div>
+
+{% endblock %}

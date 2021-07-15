@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RoyalTrip - {{ voyage.nom }} {% endblock %}
+
+ {% block stylesheetAccueil %}
+     <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+     <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleDetail.css') }}">
+
+
+ {% endblock %}
+
+
+{%  block content %}
+<div class="container" id="detailSection">
+
+    <div class="box">
+
+        <h2 class="titreVoyageId">{{ voyage.nom }}</h2>
+
+        <img src="/uploads/voyage/{{ voyage.photo }}" alt="{{ voyage.nom }}" class="photoVoyageId">
+
+        <p class="destiVoyageId"> {{ voyage.destination.region }} {{ voyage.destination.pays }}
+        {{ voyage.destination.continent }}</p>
+
+        <p class="dureeVoyageId">{{ voyage.duree }} jours : Du {{ voyage.dateDepart|date('d/m/Y') }} au {{ voyage.dateRetour|date('d/m/Y') }} </p>
+
+        <p class="descriptionVoyageId">{{ voyage.description }}</p>
+
+        <div class="formuleVoyId">
+            <u>Formule : </u>
+            <br>
+
+            {%  if voyage.formule.avion  != false %}
+              - Formule vol avion comprise <br>
+            {% endif %}
+
+            {%  if voyage.formule.hotel  != false %}
+            - Formule réservation hôtel comprise <br>
+            {% endif %}
+
+            {%  if voyage.formule.voiture != false %}
+             - Formule location voiture comprise <br>
+            {% endif %}
+
+            {%  if voyage.formule.guide  != false %}
+           - Formule guide comprise
+            {% endif %}
+
+        </div>
+
+        <div class="hebergementVoyId">
+            <u>Hebergement : </u>
+                <br>
+            {%  if voyage.hebergement.hebSeul != false %}
+               - L'hébergement est uniquement compris dans la prestation <br>
+            {% endif %}
+
+            {%  if voyage.hebergement.petitDej != false %}
+                - Le petit déjeuner est compris dans la prestation, en plus de l'hébergement <br>
+            {% endif %}
+
+            {%  if voyage.hebergement.demiPension != false %}
+            - Prestation d'hébergement en demi-pension <br>
+            {% endif %}
+
+            {%  if voyage.hebergement.pensionComplete != false %}
+            Prestation d'hébergement en pension complète
+            {% endif %}
+        </div>
+
+        <div class="serviceCompris">
+            <u>Services et équipements : </u>
+            <br>
+            {{ voyage.servicesPropose }}
+        </div>
+
+
+
+        <div class="aimeDansVoyage">
+            <u>Nous avons aimé : </u>
+            <br>
+            {{ voyage.aimeParCons }}
+        </div>
+
+        <div class="localisationGeographique">
+            <u>Localisation géographique : </u>
+            <br>
+            lorem
+        </div>
+
+        <a class="lienAjoutPanier" href="{{ path('add_panier', {'id':voyage.id}) }}">Ajoutez ce séjour à votre panier</a>
+
+    </div>
+
+</div>
+
+{% endblock %}

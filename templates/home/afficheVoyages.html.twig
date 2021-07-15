@@ -1,0 +1,23 @@
+<div class="voyage-item text-center">
+
+    <img src="/uploads/voyage/{{ voyage.photo }}" alt="{{ voyage.nom }}" class="photoVoyage" style="height: 300px; width: 300px">
+
+    <div class="container">
+        <h3 class="nomVoyage">{{ voyage.nom }}</h3>
+        <p class="destiVoyage">{{ voyage.destination.region }}, {{ voyage.destination.pays }}, {{ voyage.destination.continent }}</p>
+
+
+        <p class="dateVoyage">{{ voyage.duree }} jours : du {{ voyage.dateDepart|date('d/m/Y') }} au {{ voyage.dateRetour|date('d/m/Y') }}</p>
+        <p class="tarif">{{ voyage.tarif }} € TTC
+
+              {{ voyage.reduction }} %
+
+        </p>
+
+        <a class="lienDetail" href="{{ path('voyage', { 'id' : voyage.id}) }}">Voir le détail de la prestation</a>
+
+        <!-- <a class="lienCommentaire" href="#"> Consulter ou envoyer des commentaires de satisfaction</a> -->
+
+
+    </div>
+</div>

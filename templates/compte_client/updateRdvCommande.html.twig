@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Modifier RDV - RoyalTrip {% endblock %}
+
+{% block stylesheetAccueil %}
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleShowProfil.css') }}">
+
+
+{% endblock %}
+
+{% block content %}
+
+
+    <h1>Modifier les modalités du rendez-vous programmé : </h1>
+
+<br>
+    <br>
+    <br>
+
+<div class="modifRdv">
+    {{ form_start(formModifRdvCommande) }}
+
+
+    <div class="row">
+
+
+        <div class="col-md-4">
+            {{ form_row(formModifRdvCommande.heureRdv) }}
+        </div>
+        <br>
+
+        <div class="col-md-4">
+            {{ form_row(formModifRdvCommande.dateRdv) }}
+        </div>
+
+        <div class="col-md-4">
+            {{ form_row(formModifRdvCommande.rdvPresentiel) }}
+        </div>
+
+
+
+
+    {{ form_end(formModifRdvCommande) }}
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur de paiement - RoyalTrip{% endblock %}
+
+{% block content %}
+
+    <h2>Erreur de paiement</h2>
+
+    <p><strong>Bonjour {{ commande.client.prenom }} {{ commande.client.nom }},</strong> <br>
+        Votre demande de paiement à échouer. Veuillez nous excuser pour ce problème.
+        <br>
+        Merci de vérifier les informations personnelles et de réessayer ultérieurement.
+    <hr>
+    <a href="{{ path('account',{'email':commande.client.email}) }}" class="btn btn-success">Réessayer le paiement</a>
+    </p>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+ {% block stylesheetAccueil %}
+     <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+     <link rel="stylesheet" href="{{ asset('assets/css/stylePage/stylePageTunnelAchat.css') }}">
+
+
+ {% endblock %}
+
+{% block title %} Récapitulatif de la commande - RoyalTrip {% endblock %}
+
+
+{% block content %}
+
+    <div class="recapCom">
+    <h2>Mon récapitulatif</h2>
+
+    <p> Vérification des informations avant de prendre rendez-vous avec un conseiller </p>
+
+    <hr>
+
+    {% if notification %}
+
+    {{ notification }}
+
+    {% elseif notification is null %}
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="text-left">
+
+                <p>Récapitulatif de votre commande</p>
+            </div>
+            <div class="order-summary">
+
+                {%  for key,voy in panier  %}
+
+                    <div id="rowRecap"  class="row {% if key > 0 %}mt-2{%  endif %}">
+                        <div class="col-md-4">
+                            <img src="/uploads/voyage/{{ voy.voyageNom.photo }}" alt="{{ voy.voyageNom.nom }}" height="150px" style="margin-bottom: 40px"/>
+                        </div>
+                        <div class="col-md-3 my-auto">
+                            {{ voy.voyageNom.nom }} <br/>
+                                <br/>
+                                x {{ voy.quantite }}
+                            </small>
+                        </div>
+                        <div class="col-md-5 my-auto">
+                          Réservation pour : <br>
+                            {{ nbrePersPlus12 }} personnes ne bénéficiant pas de réduction
+                            <be></be>
+                            {{ nbrePersMoins12 }} personnes  bénéficiant d'une réduction de {{ voy.voyageNom.tarif - voy.voyageNom.tarifMoins12 }}
+                        </div>
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                       <p class="recapCout"> <strong> Coût total de la commande : </strong> {{ (voy.voyageNom.tarif * nbrePersPlus12 + voy.voyageNom.tarifMoins12 * nbrePersMoins12) }} €
+                       </p>
+                {%  endfor  %}
+            </div>
+
+            <hr>
+
+
+            <a id="checkout-button" href="{{ path('commande_rdv') }}" class="btn btn-success btn-block mt-3">Prendre RDV avec un conseiller pour la suite des modalités</a>
+
+        </div>
+
+
+    </div>
+
+    {% endif %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %}Mot de passe oublie - RoyalTrip {% endblock %}
+
+{% block content %}
+
+    <div class="box-changerMdp">
+
+        {%  for message in app.flashes('notice') %}
+            <div class="alert alert-info">{{ message }}</div>
+        {%  endfor %}
+
+        <h1>Réinitialiser mon  mot de passe</h1>
+
+
+        {{ form(formMdpOublie) }}
+
+    </div>
+{% endblock %}

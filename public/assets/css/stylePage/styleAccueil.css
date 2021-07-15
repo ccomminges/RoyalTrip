@@ -90,6 +90,8 @@ header .icDroite
     margin-left: 18px;
 }
 
+
+
 header .iconePanier ul
 {
     position: relative;
@@ -130,7 +132,7 @@ header #iconeReseaux ul li
 /* style de la section accueil */
  #accueil
  {
-     background-image : url("../../uploads/imgAccueil.jpg");
+     background-image : url("../../../uploads/imgAccueil.jpg");
      background-size: cover;
      height: 1000px;
  }
@@ -383,8 +385,24 @@ header #iconeReseaux ul li
 /* Style de la partie nos circuits : */
 #nosProduits
 {
-    height: 4100px;
+    height: 3600px;
     background-color: #9AC7BF;
+}
+
+#nosProduits .divCritere
+{
+    display: block;
+    margin-left: 30px;
+}
+
+#nosProduits .pagination
+{
+    display: block;
+    font-size: 50px;
+    position: relative;
+    top: 40px;
+    left: 30px;
+    padding-right: 15px;
 }
 
 
@@ -411,26 +429,33 @@ header #iconeReseaux ul li
 {
     position: relative;
     top : 150px;
-    left: 15%;
-    width: 1200px;
+    left: 28%;
+    width: 700px;
     font-size: 28px;
     border-radius: 3px;
+    padding-left: 15px;
 }
 
-#nosProduits #boutonFiltre
+#nosProduits .divCritere
 {
-    width: 800px;
     position: relative;
-    left: 50%;
-    top: 500px;
-    font-size: 40px;
+    top : 90px;
+}
+
+#nosProduits .btn
+{
+    width: 600px;
+    position: relative;
+    left: 28%;
+    top: 180px;
+    font-size: 26px;
     border-radius: 5px;
 }
 
 #nosProduits .voyage-container
 {
     position: relative;
-    top: 450px;
+    top: 260px;
     margin-left: 30px;
 }
 
@@ -438,18 +463,26 @@ header #iconeReseaux ul li
 {
     background-color: white;
     border-radius: 5px;
-    height: 700px;
+    height: 720px;
     width: 350px;
     margin-top: 50px;
     margin-left: 50px;
     padding: 20px 20px;
 }
 
-#nosProduits .voyage-item img
+#nosProduits .voyage-item .photoVoyage
 {
-   width: 200px;
+   width: 400px;
     height: 200px;
     padding: 10px 25px;
+}
+
+
+#nosProduits .voyage-item .photoVoyage:hover{
+    transform:scale(2);
+    -ms-transform:scale(2);
+    -webkit-transform:scale(2);
+    transition-duration:1s;
 }
 
 #nosProduits .voyage-item .nomVoyage

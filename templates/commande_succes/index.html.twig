@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheetAccueil %}
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/stylePageTunnelAchat.css') }}">
+
+
+{% endblock %}
+
+{% block title %}Validation paiement commande - RoyalTrip{% endblock %}
+
+{% block content %}
+
+    <h2>Validation du paiement</h2>
+
+    <p><strong>Bonjour {{ commande.client.prenom }} {{ commande.client.nom }},</strong> <br>
+        Nous vous confirmons le succès du paiement de la commande numero <strong>{{ commande.reference }}</strong>, <br>
+        dans le cadre du voyage {{ commande.voyage.nom }}
+    <hr>
+
+
+     <a href="{{ path('account',{'email':commande.client.email}) }}">Retour à votre compte client</a>
+    </p>
+
+{% endblock %}

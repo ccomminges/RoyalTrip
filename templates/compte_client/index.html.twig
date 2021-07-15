@@ -1,0 +1,173 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RoyalTrip - Compte Client{% endblock %}
+
+    {% block stylesheetAccueil %}
+        <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleMenuMonCompte.css') }}">
+
+
+    {% endblock %}
+
+
+
+
+
+{% block content %}
+    <div class="box-compte-client">
+
+        <h1>Bienvenue sur votre espace personnel {{ app.user.prenom }} {{ app.user.nom }}</h1>
+
+        <p class="paraMenuCompte">Vous voici sur votre compte client : dans cette espace vous pourrez ainsi prendre connaissance de votre historique de vos commandes,
+        consulter votre panier de commande, passer une commande de réservation d'un séjour, contacter un
+        conseiller ou encore voir nos propositions de voyages.
+        <br>
+        <b>N'hésitez pas à cliquer sur l'un des icones ci-dessous pour pouvoir accéder à l'une des opérations
+        décrite ci-dessus. </b></p>
+
+        {% if client.listeCommandes != null  %}
+
+        {% for com in client.listeCommandes %}
+
+           <!-- { { date(com.dateRDV)|date_modify("+3 day")|date('d/m/Y') }}
+
+
+            { { com.dateRDV|date('d/m/Y') }}  -->
+        {% if date()|date('d/m/Y')  > date(com.dateRDV)|date_modify("+3 day")|date('d/m/Y')  %}
+
+
+        {% if com.etat !=2 %}
+
+        {% if com.etat !=3 %}
+
+
+            {% for detCom in com.listeDetailCommandes %}
+                <a id="checkout-button" class="btn btn-success btn-block mt-3">Payer votre commande {{ com.reference}} | {{ detCom.total }} €</a>
+
+            {% endfor %}
+
+        {%  endif %}
+        {%  endif %}
+
+        {%  endif %}
+
+        {% endfor %}
+
+        {% endif %}
+
+
+        <div class="row">
+            <div class="col-md-1">
+
+            </div>
+
+            <div class="col-md-4" id="menuCommande">
+                <h3><u>Consulter mes commandes :</u></h3>
+                <a href="{{ path('compte_client_commande') }}"><i class="fas fa-shopping-basket"></i></a>
+            </div>
+
+            <div class="col-md-2">
+
+            </div>
+
+            <div class="col-md-4" id="menuDonneePerso">
+                <h3><u>Voir mes informations personnelles : </u></h3>
+                <a href="{{ path('show_profil', {'id':app.user.id}) }}"><i class="fas fa-address-card"></i></a>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+
+            </div>
+
+            <div class="col-md-4" id="menuPanier">
+                <h3><u>Consulter mon panier :</u></h3>
+                <a href="{{ path('panier') }}"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+
+            <div class="col-md-4" id="menuDonneeCons">
+                <h3><u>Voici les données personnelles de votre conseiller :</u></h3>
+                <a href="{{ path('show_conseiller', {'id':app.user.id}) }}"><i class="fas fa-user-cog"></i></a>
+
+            </div>
+            <div class="col-md-2">
+
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-4" id="menuRdv">
+                <h3><u>Voir mes rendez-vous :</u></h3>
+                <a href="{{ path('message_rdv') }}"><i class="fas fa-calendar-check"></i></a>
+            </div>
+        </div>
+
+
+     <!--   <div class="campagnePub">
+            <h3>Voici d'autres prestations qui peuvent vous intéresser, n'hésitez pas à les sonder pour avoir
+            plus de détail : </h3>
+        </div>  -->
+
+
+    </div>
+{% endblock %}
+
+
+{%  block script %}
+    <script src="https://js.stripe.com/v3/"></script>
+
+    {% for com in client.listeCommandes %}
+
+    <script type="text/javascript">
+
+        // Create an instance of the Stripe object with your publishable API key
+        var stripe = Stripe("pk_test_51J5BUNLFINe82BV8NR4RGFJC8Jkn998Zwl6fvQnW8eU8OUg7fI8CAwX0UCG0oqV4MBxHrMUmFJcvM8uvsme7pcyo00msh28EPf");
+        var checkoutButton = document.getElementById("checkout-button");
+        checkoutButton.addEventListener("click", function () {
+            fetch("/stripe/creer-session/{{ com.reference }}", {
+                method: "POST" ,
+            })
+                .then(function (response) {
+                    console.log(response)
+                    return response.json();
+                })
+                .then(function (session) {
+                    if(session.error=='commande')
+                    {
+                        window.location.replace('{{ path('home') }}');
+                    }
+                    else
+                    {
+                        return stripe.redirectToCheckout({ sessionId : session.id });
+                    }
+                })
+                .then(function (result) {
+                    // If redirectToCheckout fails due to a browser or network
+                    // error, you should display the localized error message to your
+                    // customer using error.message.
+                    if (result.error) {
+                        alert(result.error.message);
+                    }
+                })
+                .catch(function (error) {
+                    console.error("Error:", error);
+
+                });
+        });
+
+    </script>
+    {% endfor %}
+
+{%  endblock %}

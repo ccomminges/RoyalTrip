@@ -2,18 +2,223 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="le site de prestation de voyage à consulter pour passer des vacances de rêve">
+        <meta name="author" content="Cedric COMMINGES , CEO RoyalTrip">
+        <meta name="generator" content="Jekyll v4.1.1">
+        <title>{% block title %}RoyalTrip - Planifier des vacances de rêve{% endblock %}</title>
+
+
+
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')  }}">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+              integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+        {% block stylesheetAccueil %}
+
+            <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+
         {% endblock %}
 
+
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+
+    {% block header %}
+
+    <header id="top">
+
+        <div class="container">
+
+            <nav class="navbar navbar-expand-md navbar-light fixed-top" id="main-nav">
+
+                <div class="container">
+
+                    <div>
+                        <img class="imgLogo" src="{{ asset("assets/img/logo.PNG") }}" alt="image logo societe">
+                        <a href="{{ path('home') }}" class="navbar-brand" style="color: #FFFFFF">RoyalTrip</a>
+                    </div>
+
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav ml-auto" id="liens">
+                            <li class="nav-item mr-1">
+                                    <a href="{{ path('home') }}#presentation" class="nav-link"><b> Présentation</b></a>
+                            </li>
+                            <li class="nav-item mr-1">
+                                <a href="{{ path('home') }}#nosProduits" class="nav-link"><b>Circuits</b></a>
+                            </li>
+                            <li class="nav-item mr-1">
+                                <a href="{{ path('home') }}#contactNous" class="nav-link"><b>Contact</b></a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="operationIcone">
+                    <div class="collapse navbar-collapse" >
+                        <ul class="navbar-nav ml-auto" >
+                            {% if app.user %}
+                            <li class="nav-item mr-1">
+                            <a href="{{ path('account', {'email':app.user.email}) }}">
+                                <i class="fas fa-user-alt"></i>
+                                Mon compte <small>({{ app.user.prenom }}) </small>
+                            </a>
+                            </li>
+
+                            <li class="nav-item mr-1">
+                            <a href="{{ path('app_logout') }}" class="icDroite">
+                                <i class="fas fa-sign-out-alt" title="Se déconnecter"></i>
+
+                            </a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item mr-1">
+                            <a href="{{ path('app_login') }}">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Connexion
+                            </a>
+                            </li>
+
+                            <li class="nav-item mr-1">
+                            <a href="{{ path('register_client') }}" class="icDroite">
+                                <i class="fas fa-file-signature"></i>
+                                Inscription
+                            </a>
+                        </li>
+                        {% endif %}
+                        </ul>
+                    </div>
+                    </div>
+
+                    <div class="iconePanier">
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item mr-1">
+                             <a href="#">
+                                 <i class="fas fa-shopping-cart" title="Accéder au panier de commande"></i>
+                             </a>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+
+                    <div class="iconeAdmin">
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item mr-1">
+                                <a href="{{ path('admin') }}">
+                                    <i class="fas fa-user-cog " title="Espace administrateur"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+
+
+                    <div class="collapse navbar-collapse" id="iconeReseaux">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item mr-1">
+                                <a href="https://www.facebook.com/" class="iconesMenu">
+                                    <i class="fab fa-facebook-f" title="Notre compte facebook"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item mr-1">
+                                <a href="https://www.instagram.com/?hl=fr" class="iconesMenu">
+                                    <i class="fab fa-instagram" title="Notre compte instagram"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item mr-1">
+                                <a href="https://fr.linkedin.com/" class="iconesMenu">
+                                    <i class="fab fa-linkedin-in" title="Notre compte twitter"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block accueil %}
+
+      {%  endblock %}
+
+    {% block presentation %}
+
+    {% endblock %}
+
+    {% block nosProduits %}
+
+    {% endblock %}
+
+    {% block contact %}
+
+    {% endblock %}
+
+
+    <!-- Footer de la page accueil : -->
+    <footer  class="text-center p-4">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p>RoyalTrip &copy;
+                        <span id="year"></span> All right reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+
+
+
+
+    <script src="{{ asset('assets/js/bootstrap.bundle.js')  }}"></script>
+    <script src="{{ asset('assets/js/waypoints.min.js')  }}"></script>
+    <script src="{{ asset('assets/js/counterup.min.js')  }}"></script>
+
+    {%  block script %}
+
+    {%  endblock %}
+
+    <script>
+        $('body').scrollspy({target: '#main-nav'});
+    </script>
+
+    <script>
+        $('[data-toggle="counter-up"]').counterUp({
+            delay: 10,
+            time: 1000
+        });
+    </script>
+
     </body>
 </html>

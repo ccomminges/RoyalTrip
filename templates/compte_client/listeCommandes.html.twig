@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes commandes - RoyalTrip{% endblock %}
+
+{% block stylesheetAccueil %}
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleShowProfil.css') }}">
+
+
+{% endblock %}
+
+{% block content %}
+    <a class="lienRetour" href="{{ path('account' , {'email':app.user.email}) }}">Retour à mon compte client</a>
+
+
+    <h1>Mes séjours commandés</h1>
+
+    <br/>
+    <p class="paraListeCom">
+    Bienvenue {{ app.user.prenom }}  dans votre compte.
+    C'est dans cette espace consulter vos différentes commandes.
+    </p>
+    <br/>
+
+    <br/>
+
+    {% if listeCommandes|length == 0 %}
+        <p class="text-center" style="font-size: 26px">Vous n'avez pas encore réservé de voyage. <br/>
+    {% else %}
+
+        <table class="table mt-4 ml-1 mr-1">
+            <thead>
+            <tr>
+                <th scope="col">Référence</th>
+                <th>Nom du voyage</th>
+                <th scope="col">Passée le </th>
+                <th scope="col">Etat dossier</th>
+                <th scope="col">Afficher le détail</th>
+                <th scope="col">Opérations</th>
+                <!-- <th scope="col">Valider la commande</th> -->
+            </tr>
+            </thead>
+            <tbody>
+
+            <!-- { % for adress in app.user.orders %} -->
+            {% for commande in listeCommandes %}
+                <tr>
+                    <td><span class="badge badge-secondary">{{ commande.reference }}</span></td>
+                    <td>{{ commande.voyage.nom }}</td>
+                    <td>{{ commande.dateCreation|date('d/m/Y') }}</td>
+                    <td>
+                        {% if commande.etat == 0 %}
+                            En attente
+                        {% elseif commande.etat == 1 %}
+                            En cours de traitement
+                        {% elseif commande.etat == 2 %}
+                            Accepté
+                        {% elseif commande.etat == 3 %}
+                            Refusé
+                        {% endif %}
+                    </td>
+                    <!-- <td>{ { order.orderDetails|length }}</td>
+                    <td>{ { ((order.carrierPrice + order.getTotal)/100)|number_format(2,',',',') }} €</td>  -->
+                    <td><a href="{{ path('compte_commande_show', {'reference' : commande.reference}) }}">Voir ma commande</a></td>
+                    <td><a href="{{ path('delete_commande', {'id':commande.id}) }}">Supprimer</a></td>
+                   <!-- <td><a href="">Valider</a></td> -->
+
+
+                </tr>
+
+            {% endfor %}
+
+
+            </tbody>
+        </table>
+
+    {% endif %}
+
+{% endblock %}

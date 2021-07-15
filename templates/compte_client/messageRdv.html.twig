@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Message RDV - RoyalTrip {% endblock %}
+{% block stylesheetAccueil %}
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleShowProfil.css') }}">
+
+
+{% endblock %}
+
+{% block content %}
+
+    <a class="lienRetour" href="{{ path('account', {'email':app.user.email}) }}"> Retour à mon compte client</a>
+
+
+    <div class="msgRdv">
+
+    {% if commande != null %}
+
+<p>
+
+    Vous avez rendez vous le <b> {{ commande.dateRDV|date('d/m/Y') }}</b> à <b>{{ commande.heureRDV|date('h:m:s') }} </b> en <b> {{  commande.rdvPresentiel }} </b>
+    pour valider la commande référencée <b>{{ commande.reference }}</b> concernant le voyage <b>{{ commande.voyage.nom }}</b>
+    <br>
+    <br>
+    Le rendez-vous se déroulera avec votre conseiller attitré. Voici un rappel de ses coordonnées :
+    <br> Nom : <b>{{ client.conseiller.nom }}</b>
+    <br> Prenom : <b>{{ client.conseiller.prenom }} </b>
+    Adresse email : <b>{{ client.conseiller.email }}</b>
+    Numéro de téléphone : <b> {{ client.conseiller.telephone }}</b>
+</p>
+
+        <a href="{{ path('update_rdvCommande', {'id' : commande.id}) }}">Modifier la date ou l'heure de rendez-vous</a>
+
+    {% else %}
+
+    <p>
+        Vous n'avez pas encore de commande
+    </p>
+
+    {% endif %}
+
+    </div>
+
+{% endblock %}

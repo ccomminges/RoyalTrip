@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier - RoyalTrip{% endblock %}
+
+{% block stylesheetAccueil %}
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/stylePage/stylePanier.css') }}">
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="consultationPanier">
+<h1>Mon panier</h1>
+
+<p>Retrouver l'ensemble des articles que vous avez ajouter dans votre panier </p>
+
+<br>
+    <br>
+    {%  if panier|length >0 %}
+
+    <table class="table mt-3 ml-1 mr-1">
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th scope="col">Voyage</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Prix unitaire adulte</th>
+            <th scope="col">Prix unitaire enfant</th>
+
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {%  set total=null %}
+
+        {% for voy in panier %}
+            <tr>
+                <td>
+                    <img src="/uploads/voyage/{{ voy.voyageNom.photo }}" alt="{{ voy.voyageNom.nom }}" height="75px"/></td>
+                <td>{{ voy.voyageNom.nom  }} <br/>
+                    <small>{{ voy.voyageNom.description  }}</small></td>
+                <td>
+                    <a href="{{ path('decrease_panier',{'id':voy.voyageNom.id}) }}">
+                        <img src="{{ asset('assets/img/moins.png') }}" alt="supprimer voyage 12 plus" height="12px"/>
+                    </a>
+                    x {{ voy.quantite }}
+                    <a href="{{ path('add_panier',{'id':voy.voyageNom.id}) }}">
+                        <img src="{{ asset('assets/img/plus.png') }}" alt="ajout voyage 12 plus" height="12px"/>
+                    </a>
+                </td>
+                <td>{{ (voy.voyageNom.tarif)|number_format(2,',') }}</td>
+                <td>{{ (voy.voyageNom.tarifMoins12)|number_format(2,',') }}</td>
+
+                <!--  <td>{ { (voy.voyage.tarif * product.quantityPlus12 +  voy.voyage.tarifMoins12 * product.quantityMoins12)|number_format(2,',') }}</td>  -->
+                <td>
+                    <a href="{{ path('delete_panier', {'id':voy.voyageNom.id}) }}">
+                        <img src="{{ asset('assets/img/delete.png') }}" alt="supprimer produit" height="18px"/>
+                    </a>
+                </td>
+            </tr>
+           <!-- { %  set total=total+ product.product.prix * product.quantity %} -->
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+    <!-- { { dump(cart) }} -->
+
+    <div class="text-right mb-5">
+
+        <p class="recap"> <b>Nombre de produit :</b> {{ panier|length }} </p>
+        <hr>
+       <!-- <b>Total :</b> { { (total/100)|number_format(2,',') }}  -->
+        <a href="{{ path('commande') }}"  id="btnPagePanier" class="btn btn-success btn-block mt-3">Passer au modalités suivantes de la réservation</a>
+
+    </div>
+
+    {%  else %}
+
+        <hr>
+        <p><b>Votre panier est vide</b></p>
+
+    {%  endif %}
+
+
+</div>
+{% endblock %}
+
+

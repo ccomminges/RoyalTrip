@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+ {% block stylesheetAccueil %}
+     <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleAccueil.css') }}">
+
+     <link rel="stylesheet" href="{{ asset('assets/css/stylePage/styleCreationCompte.css') }}">
+
+
+ {% endblock %}
+
+{% block content %}
+
+    <div class="boxCreation">
+<h1>Formulaire de création de compte client : </h1>
+
+<p>Veuillez remplir et valider le formulaire ci-dessous pour vous inscrire comme client : </p>
+
+{% if notification %}
+
+    <div class="alert alert-info" id="notifCreation">{{ notification }}</div>
+{% endif %}
+
+        {{ form_start(formRegister) }}
+
+        <div class="row">
+
+        <div class="col-md-6">
+            {{ form_row(formRegister.prenom) }}
+        </div>
+
+        <div class="col-md-6">
+            {{ form_row(formRegister.nom) }}
+        </div>
+
+        <div class="col-md-6">
+            {{ form_row(formRegister.email) }}
+        </div>
+
+        <div class="col-md-6">
+            {{ form_row(formRegister.password) }}
+        </div>
+
+            <div class="col-md-12">
+           <h3>Informations complémentaires obligatoires :</h3>
+            </div>
+
+        <div class="col-md-4">
+            {{ form_row(formRegister.age) }}
+        </div>
+
+        <div class="col-md-4">
+            {{ form_row(formRegister.civilite) }}
+        </div>
+
+        <div  class="col-md-4">
+            {{ form_row(formRegister.adresse) }}
+        </div>
+
+        <div  class="col-md-6">
+            {{ form_row(formRegister.telephone) }}
+        </div>
+
+        <div  class="col-md-6">
+                {{ form_row(formRegister.dateNaissance) }}
+            </div>
+
+            <div  class="col-md-6">
+                {{ form_row(formRegister.submit) }}
+            </div>
+
+        </div>
+
+        {{ form_end(formRegister) }}
+
+
+        <!--{ { form(formRegister) }} -->
+
+    </div>
+
+    <div class="divInfoRegister">
+
+<h3>Les avantages du compte client : </h3>
+        <br>
+        <br>
+<p>-Gérer et consulter vos commandes <br>
+-Consulter votre panier, ajouter des réservations de voyage dans ce dernier et le valider <br>
+-Accéder aux données de votre conseiller et prendre constact avec ce dernier. <br/>
+-Choisir un rendez-vous pour les modalités de réservations à la date et à l'heure de votre convenance.</p>
+    </div>
+{% endblock %}
