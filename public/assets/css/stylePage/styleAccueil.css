@@ -1,0 +1,609 @@
+*, ::before, ::after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 1400px;
+}
+
+
+/* style sur la navbar */
+#top
+{
+    height: 130px;
+    background-color: #efe1bc;
+
+}
+
+header nav
+{
+    background-color: #efe1bc;
+    position: fixed;
+    height: 115px;
+
+
+}
+
+
+
+header .imgLogo
+{
+    width: 70px;
+    height: 90px;
+    position: relative;
+    right: 190px;
+    top: 13px;
+}
+
+header .navbar-brand
+{
+    font-size: 40px;
+    position: relative;
+    right: 190px;
+    top: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+header #navbarCollapse ul
+{
+    position: relative;
+    right: 120px;
+    top: 15px;
+}
+
+header #navbarCollapse ul li
+{
+    font-size: 22px ;
+}
+
+header li a
+{
+    color: #FFFFFF;
+}
+
+
+
+header li a:hover
+{
+   text-decoration: none;
+}
+
+header .operationIcone ul
+{
+    position: relative;
+    right: 35px;
+    top: 15px;
+}
+
+header .operationIcone ul li{
+    font-size: 22px;
+}
+
+header .icDroite
+{
+    margin-left: 18px;
+}
+
+header .iconePanier ul
+{
+    position: relative;
+    left: 55px;
+    top: 15px;
+}
+
+header .iconePanier ul li{
+    font-size: 22px;
+}
+
+
+header .iconeAdmin ul
+{
+    position: relative;
+    left: 70px;
+    top: 15px;
+}
+
+header .iconeAdmin ul li{
+    font-size: 22px;
+}
+
+header #iconeReseaux ul
+{
+    position: relative;
+    left: 150px;
+    top: 15px;
+}
+
+header #iconeReseaux ul li
+{
+    font-size: 22px ;
+    margin-left: 10px;
+}
+
+
+/* style de la section accueil */
+ #accueil
+ {
+     background-image : url("../../uploads/imgAccueil.jpg");
+     background-size: cover;
+     height: 1000px;
+ }
+
+ #accueil h1
+ {
+     color: white;
+     font-weight: bold;
+     font-size: 140px;
+     text-align: center;
+     position:relative;
+     top: 70px;
+     left: 52px;
+ }
+
+#accueil h3
+{
+    color: white;
+    font-size: 55px;
+    position: relative;
+    top: 210px;
+    left: 20px;
+}
+
+#accueil #btnCircuits
+{
+    font-size: 20px;
+    position: relative;
+    top:  430px;
+    left: 170px;
+    width: 250px;
+    height: 90px;
+    text-decoration: none;
+    margin: auto;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 30px;
+}
+
+#accueil #btnContact
+{
+    font-size: 20px;
+    position: relative;
+    top:  430px;
+    left: 820px;
+    width: 250px;
+    height: 90px;
+    text-decoration: none;
+    margin: auto;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 30px;
+}
+
+/* Style de la section présentation */
+#presentation
+{
+    height: 4100px;
+    background-color: #FFF4C3;
+}
+
+.aPropos
+{
+    position: relative;
+    top: 60px;
+    left: 45px;
+    width: 600px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 7px;
+    box-shadow:0px 10px 30px yellow;
+
+}
+
+.aPropos h2
+{
+  text-align: justify;
+    font-weight: bold;
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.aPropos p
+{
+    text-align: justify;
+    font-size: 19px;
+}
+
+.chiffresCle
+{
+    position: relative;
+    top: 100px;
+    left: 860px;
+    width: 600px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 7px;
+    box-shadow:0px 10px 30px yellow;
+}
+
+
+.chiffresCle h2
+{
+    text-align: justify;
+    font-weight: bold;
+    font-size: 35px;
+    margin-bottom: 45px;
+}
+
+.chiffresCle span
+{
+    color: #1ea471;
+    text-align: center;
+    font-size: 28px;
+    margin-left: 50px;
+}
+
+.chiffresCle p
+{
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 125px;
+    padding: 15px;
+}
+
+
+.services
+{
+    position: relative;
+    top: 220px;
+    left: 110px;
+    width: 1300px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 7px;
+    box-shadow:0px 10px 30px yellow;
+}
+
+
+.services h2
+{
+    text-align: justify;
+    font-weight: bold;
+    font-size: 35px;
+    margin-bottom: 65px;
+}
+
+
+
+.services span
+{
+    color: #1ea471;
+    text-align: center;
+    font-size: 28px;
+    margin-left: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.services p
+{
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 125px;
+    text-indent: 5%;
+    margin-left: 25px;
+}
+
+
+.nousChoisir
+{
+    position: relative;
+    top: 400px;
+    left: 110px;
+    width: 1300px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 7px;
+    box-shadow:0px 10px 30px yellow;
+}
+
+
+.nousChoisir h2
+{
+    text-align: justify;
+    font-weight: bold;
+    font-size: 35px;
+    margin-bottom: 95px;
+}
+
+
+
+.nousChoisir span
+{
+    color: #1ea471;
+    text-align: center;
+    font-size: 28px;
+    margin-left: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.nousChoisir span i{
+    font-size: 50px;
+    position: relative;
+    left: 35%;
+}
+
+.nousChoisir p
+{
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 125px;
+    text-indent: 5%;
+    margin-left: 25px;
+}
+
+
+.confiance
+{
+    position: relative;
+    top: 550px;
+    left: 110px;
+    width: 1300px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 7px;
+    box-shadow:0px 10px 30px yellow;
+    margin-bottom: 1000px;
+}
+
+
+.confiance h2
+{
+    text-align: justify;
+    font-weight: bold;
+    font-size: 35px;
+    margin-bottom: 95px;
+}
+
+.confiance img
+{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 150px;
+}
+
+/* Style de la partie nos circuits : */
+#nosProduits
+{
+    height: 4100px;
+    background-color: #9AC7BF;
+}
+
+
+#nosProduits h2
+{
+    text-align: justify;
+    font-weight: bold;
+    font-size: 35px;
+    position: relative;
+    top: 60px;
+    left: 45px;
+}
+
+#nosProduits .sousPhraseProduits
+{
+    text-align: center;
+    font-size: 28px;
+    position: relative;
+    top: 105px;
+
+}
+
+#nosProduits .inputRecherche
+{
+    position: relative;
+    top : 150px;
+    left: 15%;
+    width: 1200px;
+    font-size: 28px;
+    border-radius: 3px;
+}
+
+#nosProduits #boutonFiltre
+{
+    width: 800px;
+    position: relative;
+    left: 50%;
+    top: 500px;
+    font-size: 40px;
+    border-radius: 5px;
+}
+
+#nosProduits .voyage-container
+{
+    position: relative;
+    top: 450px;
+    margin-left: 30px;
+}
+
+#nosProduits .voyage-item
+{
+    background-color: white;
+    border-radius: 5px;
+    height: 700px;
+    width: 350px;
+    margin-top: 50px;
+    margin-left: 50px;
+    padding: 20px 20px;
+}
+
+#nosProduits .voyage-item img
+{
+   width: 200px;
+    height: 200px;
+    padding: 10px 25px;
+}
+
+#nosProduits .voyage-item .nomVoyage
+{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+#nosProduits .voyage-item .destiVoyage
+{
+    font-size: 24px;
+    margin-top: 12px;
+}
+
+#nosProduits .voyage-item .dateVoyage
+{
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+#nosProduits .voyage-item .tarif
+{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#nosProduits .voyage-item .lienDetail
+{
+   display: block;
+    margin-top: 70px;
+    font-size: 20px;
+}
+
+#nosProduits .voyage-item .lienCommentaire
+{
+   display: block;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#nosProduits .voyage-item .lienDetail:hover
+{
+   text-decoration: none;
+    color: #0d5e42;
+}
+
+#nosProduits .voyage-item .lienCommentaire
+{
+    text-decoration: none;
+    color: #0d5e42;
+}
+
+
+
+/* Style de la partie nous contacter : */
+#contactNous
+{
+    height: 1350px;
+    background-color: #E6E6E6;
+}
+
+#contactNous h2
+{
+    text-align: justify;
+    font-weight: bold;
+    font-size: 35px;
+    position: relative;
+    top: 60px;
+    left: 45px;
+}
+
+#contactNous p
+{
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+    top: 105px;
+
+}
+
+#contactNous .formCont
+{
+    position: relative;
+    top: 180px;
+}
+
+#contactNous .form-group
+{
+    padding-left: 170px;
+}
+
+#contactNous .form-control
+{
+    width: 1000px;
+}
+
+#contactNous .fa-user
+{
+    font-size: 40px!important;
+    float: left;
+    padding-right: 13px;
+    position: relative;
+    top: 28px;
+}
+
+#contactNous .fa-envelope
+{
+    font-size: 40px!important;
+    float: left;
+    padding-right: 10px;
+    position: relative;
+    top: 28px;
+}
+
+#contactNous .fa-mobile-alt
+{
+    font-size: 40px!important;
+    float: left;
+    padding-right: 25px;
+    position: relative;
+    top: 28px;
+}
+
+#contactNous .fa-pencil-alt
+{
+    font-size: 40px!important;
+    float: left;
+    padding-right: 10px;
+    position: relative;
+    top: 28px;
+}
+
+#contactNous .btn-block{
+    width: 700px;
+    position: relative;
+    left: 25%;
+    margin-top:90px;
+    font-size: 40px;
+    border-radius: 5px;
+}
+
+/*Style du footer */
+
+/*style du footer */
+footer p
+{
+    font-size: 22px;
+}
+
+
+
+
+
+
+

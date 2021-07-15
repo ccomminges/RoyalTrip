@@ -1,0 +1,106 @@
+*, ::before, ::after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 1500px;
+    background-color: #FFF2CC;
+}
+
+
+#detailSection
+{
+    background-color: white;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    height: 1200px;
+    border-radius: 5px;
+}
+
+#detailSection .box
+{
+    position: relative;
+    top: 70px;
+    left: 25px;
+}
+#detailSection .box h2
+{
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#detailSection .box .destiVoyageId {
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+#detailSection .box img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 40%;
+    margin-top: 60px;
+}
+
+#detailSection .box .dureeVoyageId {
+    font-size: 30px;
+    margin-top: 18px;
+}
+
+#detailSection .box .descriptionVoyageId {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+#detailSection .box .formuleVoyId {
+    position: relative;
+    margin-top: 200px;
+    margin-right: 400px;
+    font-size: 24px;
+}
+
+#detailSection .box .hebergementVoyId {
+    position: relative;
+    bottom: 148px;
+    left: 600px;
+    font-size: 24px;
+}
+
+#detailSection .box .serviceCompris {
+    position: relative;
+    top: 20px;
+    font-size: 24px;
+}
+
+
+#detailSection .box .aimeDansVoyage {
+    position: relative;
+    bottom: 50px;
+    left: 600px;
+    font-size: 24px;
+}
+
+#detailSection .box .localisationGeographique {
+    position: relative;
+    top: 20px;
+    font-size: 24px;
+}
+
+#detailSection .box .lienAjoutPanier {
+    position: relative;
+    top: 150px;
+    left: 800px;
+    font-size: 20px;
+}
+
+#detailSection .box .lienAjoutPanier:hover {
+    text-decoration: none;
+}
+
+
+
