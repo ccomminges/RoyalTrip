@@ -89,3 +89,103 @@ button
     border: 0px;
 }
 
+
+@media screen and (max-width : 1200px)
+{
+    h1{
+        font-size: 35px;
+        margin-top: 15px;
+    }
+
+    .paraConnexion
+    {
+        font-size: 27px;
+    }
+
+    input
+    {
+        width: 300px;
+        font-size: 18px;
+        margin-left: 280px;
+
+    }
+
+    label{
+        margin-left: 280px;
+        font-size: 18px;
+
+    }
+
+    .creerCmp
+    {
+        width: 500px;
+        font-size: 18px;
+        margin-left: 300px;
+        margin-bottom: 50px;
+        border-radius: 5px;
+    }
+
+    .mdpOublie
+    {
+        font-size: 18px;
+        margin-left: 300px;
+    }
+
+    button
+    {
+        font-size: 18px;
+        margin-left: 340px;
+    }
+
+}
+
+@media screen and (max-width : 800px)
+{
+    h1{
+        font-size: 30px;
+        margin-top: 15px;
+    }
+
+    .paraConnexion
+    {
+        font-size: 22px;
+    }
+
+    input
+    {
+        width: 300px;
+        font-size: 14px;
+        margin-left: 190px;
+
+    }
+
+    label{
+        margin-left: 190px;
+        font-size: 14px;
+    }
+
+    .creerCmp
+    {
+        width: 400px;
+        font-size: 14px;
+        margin-left: 210px;
+        margin-bottom: 50px;
+        border-radius: 5px;
+    }
+
+    .mdpOublie
+    {
+        font-size: 14px;
+        margin-left: 210px;
+    }
+
+    button
+    {
+        font-size: 14px;
+        margin-left: 240px;
+    }
+
+}
+
+
+

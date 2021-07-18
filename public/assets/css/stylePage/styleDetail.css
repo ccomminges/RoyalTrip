@@ -109,4 +109,135 @@ body {
 }
 
 
+@media screen and (max-width : 1200px) {
+
+    #detailSection
+    {
+        height: 1900px;
+    }
+
+    #detailSection .box h2
+    {
+        font-size: 31px;
+    }
+
+    #detailSection .box .destiVoyageId{
+        font-size:26px ;
+    }
+
+    #detailSection .box .dureeVoyageId {
+        font-size: 26px;
+
+    }
+
+    #detailSection .box .descriptionVoyageId {
+        font-size: 26px;
+
+    }
+
+    #detailSection .box .formuleVoyId {
+        font-size: 21px;
+    }
+
+    #detailSection .box .hebergementVoyId {
+        font-size: 21px;
+
+
+    }
+
+    #detailSection .box .serviceCompris {
+        font-size: 21px;
+    }
+
+
+    #detailSection .box .aimeDansVoyage {
+        font-size: 21px;
+    }
+
+    #detailSection .box .localisationGeographique {
+        font-size: 21px;
+    }
+
+    #detailSection .box .lienAjoutPanier {
+        font-size: 21px;
+        position : relative;
+        left: 600px;
+    }
+
+}
+
+
+@media screen and (max-width : 800px) {
+
+    #detailSection
+    {
+        height: 1300px;
+    }
+
+    #detailSection .box h2
+    {
+        font-size: 26px;
+    }
+
+    #detailSection .box img {
+        width: 300px;
+        height: 150px;
+        position: relative;
+        left:210px;
+        margin-top: 80px;
+    }
+
+
+    #detailSection .box .destiVoyageId{
+        font-size:21px ;
+    }
+
+    #detailSection .box .dureeVoyageId {
+        font-size: 21px;
+
+    }
+
+    #detailSection .box .descriptionVoyageId {
+        font-size: 21px;
+
+    }
+
+    #detailSection .box .formuleVoyId {
+        font-size: 17px;
+    }
+
+    #detailSection .box .hebergementVoyId {
+        font-size: 17px;
+        position: relative;
+        left: 370px;
+        bottom: 119px;
+        width: 200px;
+    }
+
+    #detailSection .box .serviceCompris {
+        font-size: 17px;
+    }
+
+
+    #detailSection .box .aimeDansVoyage {
+        font-size: 17px;
+        position: relative;
+        left: 370px;
+        bottom: 45px;
+    }
+
+    #detailSection .box .localisationGeographique {
+        font-size: 17px;
+    }
+
+    #detailSection .box .lienAjoutPanier {
+        font-size: 17px;
+        position : relative;
+        left: 300px;
+        top: 25px;
+    }
+
+}
+
+
 

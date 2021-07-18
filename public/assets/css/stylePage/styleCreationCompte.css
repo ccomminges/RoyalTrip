@@ -141,3 +141,118 @@ body {
     font-size: 24px;
     text-align: justify;
 }
+
+
+@media screen and (max-width : 1200px)
+{
+    h1{
+        font-size: 35px;
+        margin-top: 15px;
+    }
+
+    .boxCreation p
+    {
+        font-size: 27px;
+    }
+
+    .boxCreation h3
+    {
+        font-size: 25px;
+        margin-left: 20px;
+    }
+
+    .boxCreation input
+    {
+        width: 300px;
+        font-size: 16px;
+    }
+
+    .boxCreation  .btn-inscription
+    {
+        width: 300px;
+        font-size: 26px;
+        margin-left: 750px;
+        margin-bottom: 50px;
+        border-radius: 5px;
+    }
+
+
+    .divInfoRegister
+    {
+        position: relative;
+        left: 100px;
+        bottom: 100px;
+    }
+
+    .divInfoRegister h3
+    {
+        font-size: 24px;
+    }
+
+    .divInfoRegister p
+    {
+        font-size: 19px;
+        text-align: justify;
+    }
+
+}
+
+
+@media screen and (max-width : 800px)
+{
+    h1{
+        font-size: 28px;
+        margin-top: 15px;
+    }
+
+    .boxCreation p
+    {
+        font-size: 23px;
+    }
+
+    .boxCreation h3
+    {
+        font-size: 21px;
+        margin-left: 20px;
+    }
+
+    .boxCreation input
+    {
+        width: 200px;
+        font-size: 12px;
+    }
+
+    .boxCreation label
+    {
+        font-size: 19px;
+    }
+
+    .boxCreation  .btn-inscription
+    {
+        width: 200px;
+        font-size: 21px;
+        margin-left: 500px;
+        margin-bottom: 50px;
+        border-radius: 5px;
+    }
+
+
+    .divInfoRegister
+    {
+        position: relative;
+        left: 50px;
+        bottom: 100px;
+    }
+
+    .divInfoRegister h3
+    {
+        font-size: 20px;
+    }
+
+    .divInfoRegister p
+    {
+        font-size: 16px;
+        text-align: justify;
+    }
+
+}
