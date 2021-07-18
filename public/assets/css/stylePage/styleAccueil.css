@@ -689,6 +689,9 @@ footer p
     {
         background-size: cover;
         height: 800px;
+        margin-bottom: 15px;
+        position: relative;
+        bottom: 15px;
     }
 
     #accueil h1
@@ -726,8 +729,290 @@ footer p
         left: 820px;
         width: 170px;
         height: 60px;
+
     }
 
+    /* Style de la section présentation */
+    #presentation
+    {
+        height: 3800px;
+        background-color: #FFF4C3;
+        position: relative;
+        bottom: 30px;
+    }
+
+    .aPropos
+    {
+        position: relative;
+        top: 60px;
+        left: 255px;
+        width: 600px;
+        background-color: white;
+        padding: 25px;
+        border-radius: 7px;
+        box-shadow:0px 10px 30px yellow;
+
+    }
+
+    .aPropos h2
+    {
+        text-align: justify;
+        font-weight: bold;
+        font-size: 25px;
+        margin-bottom: 25px;
+    }
+
+    .aPropos p
+    {
+        text-align: justify;
+        font-size: 16px;
+    }
+
+    .chiffresCle
+    {
+        position: relative;
+        top: 110px;
+        left: 255px;
+        width: 600px;
+        background-color: white;
+        padding: 25px;
+        border-radius: 7px;
+        box-shadow:0px 10px 30px yellow;
+    }
+
+
+    .chiffresCle h2
+    {
+        text-align: justify;
+        font-weight: bold;
+        font-size: 25px;
+        margin-bottom: 45px;
+    }
+
+    .chiffresCle span
+    {
+        color: #1ea471;
+        text-align: center;
+        font-size: 20px;
+        margin-left: 50px;
+    }
+
+    .chiffresCle p
+    {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 125px;
+        padding: 15px;
+    }
+
+
+    .services
+    {
+        position: relative;
+        top: 223px;
+        left: 23px;
+        width: 1150px;
+        background-color: white;
+        padding: 25px;
+        border-radius: 7px;
+        box-shadow:0px 10px 30px yellow;
+    }
+
+
+    .services h2
+    {
+        text-align: justify;
+        font-weight: bold;
+        font-size: 25px;
+        margin-bottom: 65px;
+    }
+
+
+
+    .services span
+    {
+        color: #1ea471;
+        text-align: center;
+        font-size: 20px;
+        margin-left: 25px;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .services p
+    {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 30px;
+        margin-bottom: 125px;
+        text-indent: 5%;
+        margin-left: 25px;
+    }
+
+
+    .nousChoisir
+    {
+        position: relative;
+        top: 410px;
+        left: 23px;
+        width: 1150px;
+        background-color: white;
+        padding: 25px;
+        border-radius: 7px;
+        box-shadow:0px 10px 30px yellow;
+    }
+
+
+    .nousChoisir h2
+    {
+        text-align: justify;
+        font-weight: bold;
+        font-size: 25px;
+        margin-bottom: 95px;
+    }
+
+
+
+    .nousChoisir span
+    {
+        color: #1ea471;
+        text-align: center;
+        font-size: 20px;
+        margin-left: 25px;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .nousChoisir span i{
+        font-size: 50px;
+        position: relative;
+        left: 35%;
+    }
+
+    .nousChoisir p
+    {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 30px;
+        margin-bottom: 125px;
+        text-indent: 5%;
+        margin-left: 25px;
+    }
+
+
+    .confiance
+    {
+        position: relative;
+        top: 560px;
+        left: 23px;
+        width: 1150px;
+        background-color: white;
+        padding: 25px;
+        border-radius: 7px;
+        box-shadow:0px 10px 30px yellow;
+        margin-bottom: 1000px;
+    }
+
+
+    .confiance h2
+    {
+        text-align: justify;
+        font-weight: bold;
+        font-size: 25px;
+        margin-bottom: 95px;
+    }
+
+    .confiance img
+    {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 150px;
+    }
+
+    /*section nos produits */
+    #nosProduits
+    {
+        height: 3200px;
+        background-color: #9AC7BF;
+        position: relative;
+        bottom: 40px;
+    }
+
+    #nosProduits h2
+    {
+        font-size: 25px;
+    }
+
+    #nosProduits .voyage-item
+    {
+        background-color: white;
+        border-radius: 5px;
+        height: 720px;
+        width: 350px;
+        margin-top: 50px;
+        margin-left: 1px;
+        padding: 20px 20px;
+    }
+
+
+    #contactNous
+    {
+        height: 1350px;
+        background-color: #E6E6E6;
+        position: relative;
+        bottom: 55px;
+    }
+
+    #contactNous h2
+    {
+       font-size: 25px;
+    }
+    #contactNous p
+    {
+        font-size: 20px;
+
+    }
+    #contactNous input{
+        margin-left: 35px;
+        width: 890px;
+
+    }
+
+    #contactNous .fa-user
+    {
+        font-size: 30px!important;
+        float: left;
+        padding-right: 23px;
+        position: relative;
+        top: 28px;
+    }
+
+    #contactNous .fa-envelope
+    {
+        font-size: 30px!important;
+        float: left;
+        padding-right: 10px;
+        position: relative;
+        top: 28px;
+    }
+
+    #contactNous .fa-mobile-alt
+    {
+        font-size: 30px!important;
+        float: left;
+        padding-right: 25px;
+        position: relative;
+        top: 28px;
+    }
+
+    #contactNous .fa-pencil-alt
+    {
+        font-size: 30px!important;
+        float: left;
+        padding-right: 10px;
+        position: relative;
+        top: 28px;
+    }
 
 
 }
@@ -787,6 +1072,7 @@ footer p
     {
         background-size: cover;
         height: 600px;
+
     }
 
     #accueil h1
